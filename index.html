@@ -1,0 +1,33 @@
+<div id="target">
+
+</div>
+<script src="style.js"></script>
+<script>
+    const divRed = styled.div`
+        background-color: red;
+        width: 200px;
+        height: 200px;
+    `
+
+    divRed.innerText = 'hello'
+    
+    document.getElementById('target')
+        .appendChild(divRed)
+
+   const whitObject = styled.object({
+        element: 'div',
+        backgroundColor: 'red',
+        width: '200px',
+        height:'200px'   
+   })
+
+   console.log(whitObject);
+   
+
+   class Elemento {
+        constructor(style){
+
+        }
+   }
+   
+</script>
