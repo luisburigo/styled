@@ -14,7 +14,7 @@ styled.object = function(obj){
     let css = '';
 
     for (const key in obj) {
-        if (obj.hasOwnProperty(key) && !obj.hasOwnProperty('element') ) {
+        if (obj.hasOwnProperty(key) && key !== 'element' ) {
             const propertyName = key.split(/(?=[A-Z])/).join('-').toLowerCase();
             css += `
                 ${propertyName}: ${obj[key]}
@@ -27,6 +27,7 @@ styled.object = function(obj){
     if(obj.element){
         const el = document.createElement(obj.element)
         el.setAttribute('class', classe)
+        
         return el
     }
 

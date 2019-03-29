@@ -18,16 +18,48 @@
         element: 'div',
         backgroundColor: 'red',
         width: '200px',
-        height:'200px'   
+        height:'200px' 
    })
 
-   console.log(whitObject);
-   
-
    class Elemento {
-        constructor(style){
+        constructor({el, style}){
+            this.el = el;
 
+            if(typeof style === 'object'){
+                this.style = {
+                    ...style,
+                    element: el
+                }
+                this.type = 'obj'
+            }
+
+            if(typeof style === 'string'){
+                this.style = style;
+                this.type = 'str'
+            }
+        }
+
+        get(){
+            if(this.type === 'obj'){
+                return styled.object(this.style)
+            }
+
+            if(this.type === 'str'){
+                return styled[this.el](this.style)
+            }
         }
    }
+
+   const elmento = new Elemento({
+       el: 'div',
+       style: {
+        backgroundColor: 'red',
+        width: '200px',
+        height:'200px' 
+       }
+   })
+
+   console.log(elmento.get());
    
+
 </script>
