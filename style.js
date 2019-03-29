@@ -17,7 +17,7 @@ styled.object = function(obj){
         if (obj.hasOwnProperty(key) && key !== 'element' ) {
             const propertyName = key.split(/(?=[A-Z])/).join('-').toLowerCase();
             css += `
-                ${propertyName}: ${obj[key]}
+                ${propertyName}: ${obj[key]};
             ` 
         }
     }

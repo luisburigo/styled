@@ -22,8 +22,9 @@
    })
 
    class Elemento {
-        constructor({el, style}){
+        constructor({el, style, attrs}){
             this.el = el;
+            this.attrs = attrs;
 
             if(typeof style === 'object'){
                 this.style = {
@@ -41,7 +42,13 @@
 
         get(){
             if(this.type === 'obj'){
-                return styled.object(this.style)
+                const el = styled.object(this.style)
+                for (const key in this.attrs) {
+                    if (this.attrs.hasOwnProperty(key)) {
+                       el[key] = this.attrs[key]
+                    }
+                }
+                return el;
             }
 
             if(this.type === 'str'){
@@ -56,10 +63,16 @@
         backgroundColor: 'red',
         width: '200px',
         height:'200px' 
+       },
+       attrs: {
+           onclick: () => {
+               console.log('aquiii');
+           }
        }
    })
 
-   console.log(elmento.get());
+   document.getElementById('target')
+        .appendChild(elmento.get())
    
 
 </script>
