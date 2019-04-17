@@ -1,0 +1,31 @@
+{
+  "name": "el-style",
+  "version": "1.0.0",
+  "description": "Create styles whit js",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack --env.dev --colors"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gugaburigo29/styled.git"
+  },
+  "keywords": [
+    "styled",
+    "css",
+    "css-modules",
+    "styled-components"
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
+  },
+  "author": "Luís Gustavo Búrigo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gugaburigo29/styled/issues"
+  },
+  "homepage": "https://github.com/gugaburigo29/styled#readme"
+}
