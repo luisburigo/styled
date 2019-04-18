@@ -4,7 +4,8 @@
   "description": "Create styles whit js",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack --env.dev --colors"
+    "dev": "webpack --env.dev --colors",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -20,7 +21,8 @@
     "@babel/core": "^7.4.0",
     "@babel/preset-env": "^7.4.2",
     "webpack": "^4.29.6",
-    "webpack-cli": "^3.3.0"
+    "webpack-cli": "^3.3.0",
+    "jest": "^24.7.1"
   },
   "author": "Luís Gustavo Búrigo",
   "license": "ISC",
