@@ -23,8 +23,9 @@ export function createStyleString(...styles) {
 
     const styleString = styleArray.join('');
     const styleSplitForBreakLines = styleString.split(',');
+    const stringReplaced = removeCommaAndReturnString(styleSplitForBreakLines);
 
-    return removeCommaAndReturnString(styleSplitForBreakLines);
+    return addKeysInStyle(stringReplaced);
 }
 
 /**
@@ -33,4 +34,12 @@ export function createStyleString(...styles) {
  */
 function removeCommaAndReturnString(array) {
     return array.filter(arr => arr !== ',').join('')
+}
+
+/**
+ * @param {string} style
+ * @return {string}
+ */
+function addKeysInStyle(style) {
+    return `{${style}\n}`
 }
