@@ -8,8 +8,9 @@ const parameters = {
 };
 
 /**
- * @description Receive a string with styles and add in tag <style csscript> in <head>
+ * @description Receive a string with styles and return whit all formatters
  * @param {Array<string>} styles
+ * @return string
  */
 export function createStyleString(...styles) {
     const styleArray = styles.map((css, i, array) => {
