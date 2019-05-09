@@ -3,7 +3,7 @@ import {colors} from "./Colors";
 /**
  * @type {{colors: {red, orange, green, blue, yellow}}}
  */
-const paramaters = {
+const parameters = {
   colors
 };
 
@@ -16,7 +16,7 @@ export function createStyleString(...styles) {
         if (typeof css === 'object') {
             return css;
         } else if (typeof css === 'function') {
-            return css(paramaters);
+            return css(parameters);
         }
     });
 
