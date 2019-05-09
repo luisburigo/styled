@@ -1,0 +1,14 @@
+import {createClassName} from "./create-class-name";
+import {createStyleString} from "./create-style-string";
+
+const SIZE_CLASSNAME = 10;
+
+/**
+ * @description create style, insert in DOM and return the classname
+ * @param {string} style
+ * @return string
+ */
+export function tag(...style) {
+    const className = createClassName(SIZE_CLASSNAME);
+    const styleString = createStyleString(style);
+}
