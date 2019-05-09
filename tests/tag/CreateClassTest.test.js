@@ -17,6 +17,3 @@ test('when generating the class, should be in the cache', () => {
     const hasClass = hasClassInCache(className);
     expect(hasClass).toEqual(true);
 });
-
-
-
