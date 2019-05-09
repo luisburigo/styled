@@ -34,6 +34,7 @@ export function createClassName(length) {
         name = randomName(length);
     } while (hasClassInCache(name));
 
+    name = className(name);
     addClassNameInCache(name);
 
     return name;
@@ -54,4 +55,12 @@ export function randomName(length) {
     }
 
     return name;
+}
+
+/**
+ * @param {string} className
+ * @return {string}
+ */
+function className(className) {
+    return `.${className}`;
 }
