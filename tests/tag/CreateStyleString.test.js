@@ -7,3 +7,11 @@ test('Execute the function whit tag functions', () => {
 
     expect(style).toContain('width: 120px')
 });
+
+test('Execute the function whit tag functions and contain colors in parameters', () => {
+    const style = createStyleString`
+        ${ ({colors}) =>  `background-color: ${colors.red}`}
+    `;
+
+    expect(style).toContain(`background-color: #ff0000`)
+});

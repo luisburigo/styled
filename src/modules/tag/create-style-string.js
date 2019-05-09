@@ -1,3 +1,12 @@
+import {colors} from "./Colors";
+
+/**
+ * @type {{colors: {red, orange, green, blue, yellow}}}
+ */
+const paramaters = {
+  colors
+};
+
 /**
  * @description Receive a string with styles and add in tag <style csscript> in <head>
  * @param {Array<string>} styles
@@ -7,7 +16,7 @@ export function createStyleString(...styles) {
         if (typeof css === 'object') {
             return css;
         } else if (typeof css === 'function') {
-            return css();
+            return css(paramaters);
         }
     });
 
