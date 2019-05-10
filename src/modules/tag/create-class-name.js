@@ -37,7 +37,7 @@ export function createClassName(length) {
     name = className(name);
     addClassNameInCache(name);
 
-    return name;
+    return name; // Todo: retornar dois tipos, com e sem ponto.
 }
 
 /**
