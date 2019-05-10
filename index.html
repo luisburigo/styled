@@ -78,17 +78,10 @@
 </script>-->
 <script src="./dist/index.js"></script>
 <script>
-    tag`
-        background: red;
-        ${({colors}) => `color: ${colors.red}`}
-    `
-    tag`
-        background: green;
-    `
-    tag`
-        background: blue;
-    `
-    tag`
-        background: yellow;
-    `
+   const divRed = tag`
+            background: red;
+            ${ ({colors}) => `color: ${colors.RED}` }
+   `
+
+    console.log(divRed)
 </script>
