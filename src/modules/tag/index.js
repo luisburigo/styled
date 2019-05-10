@@ -16,4 +16,6 @@ export function tag(...style) {
     const styleConcact = concatStrings(className, styleString);
 
     insertInDom(styleConcact);
+
+    return className;
 }
