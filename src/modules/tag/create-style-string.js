@@ -12,7 +12,7 @@ const parameters = {
  * @param {Array<string>} styles
  * @return string
  */
-export function createStyleString(...styles) {
+export function createStyleString(styles) {
     const styleArray = styles.map((css, i, array) => {
         if (typeof css === 'object') {
             return css;
@@ -41,5 +41,5 @@ function removeCommaAndReturnString(array) {
  * @return {string}
  */
 function addKeysInStyle(style) {
-    return `{${style}\n}`
+    return `{${style}}\n`
 }
