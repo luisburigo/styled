@@ -1,6 +1,7 @@
 import {createClassName} from "./create-class-name";
 import {createStyleString} from "./create-style-string";
 import {concatStrings} from "../../helpers/concatStrings";
+import {insertInDom} from "./insert-in-dom";
 
 const SIZE_CLASSNAME = 10;
 
@@ -14,5 +15,5 @@ export function tag(...style) {
     const styleString = createStyleString(style);
     const styleConcact = concatStrings(className, styleString);
 
-    console.log(styleConcact);
+    insertInDom(styleConcact);
 }

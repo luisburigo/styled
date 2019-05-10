@@ -1,7 +1,7 @@
 <div id="target">
 
 </div>
-<script src="style.js"></script>
+<!--<script src="style.js"></script>
 <script>
     const divRed = styled.div`
         background-color: red;
@@ -14,14 +14,14 @@
     document.getElementById('target')
         .appendChild(divRed)
 
-   const whitObject = styled.object({
+    const whitObject = styled.object({
         element: 'div',
         backgroundColor: 'red',
         width: '200px',
         height:'200px'
-   })
+    })
 
-   class Elemento {
+    class Elemento {
         constructor({el, style, attrs}){
             this.el = el;
             this.attrs = attrs;
@@ -45,7 +45,7 @@
                 const el = styled.object(this.style)
                 for (const key in this.attrs) {
                     if (this.attrs.hasOwnProperty(key)) {
-                       el[key] = this.attrs[key]
+                        el[key] = this.attrs[key]
                     }
                 }
                 return el;
@@ -55,24 +55,30 @@
                 return styled[this.el](this.style)
             }
         }
-   }
+    }
 
-   const elmento = new Elemento({
-       el: 'div',
-       style: {
-        backgroundColor: 'red',
-        width: '200px',
-        height:'200px'
-       },
-       attrs: {
-           onclick: () => {
-               console.log('aquiii');
-           }
-       }
-   })
+    const elmento = new Elemento({
+        el: 'div',
+        style: {
+            backgroundColor: 'red',
+            width: '200px',
+            height:'200px'
+        },
+        attrs: {
+            onclick: () => {
+                console.log('aquiii');
+            }
+        }
+    })
 
-   document.getElementById('target')
+    document.getElementById('target')
         .appendChild(elmento.get())
 
 
+</script>-->
+<script src="./dist/index.js"></script>
+<script>
+    tag`
+        background: red;
+    `
 </script>
