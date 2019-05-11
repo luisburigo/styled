@@ -78,14 +78,13 @@
 </script>-->
 <script src="./dist/index.js"></script>
 <script>
-    const divRed = tag`
-            width: 200px;
-            height: 200px;
-            background: red;
-            ${({colors}) => `color: ${colors.RED}`}
-   `
+    const divRed = CSScript({
+        element: 'div',
+        'background-color': CSScript.colors.RED,
+        width: '100px',
+        height: '100px',
+    })
 
-    const div = document.createElement('div');
-
-    div.classList.add(divRed);
+    document.getElementById('target')
+        .appendChild(divRed)
 </script>

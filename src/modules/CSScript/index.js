@@ -1,6 +1,7 @@
 import {tag} from "../tag";
 import {convertObjectToString} from "../../modules/CSScript/convert-object-to-string"
 import {createElement} from "../../modules/CSScript/create-element"
+import {colors} from "../tag/Colors"
 
 /**
  * A type Style
@@ -12,7 +13,7 @@ import {createElement} from "../../modules/CSScript/create-element"
  * @param {string|Object|Style} styles
  * @return string | HTMLElement
  */
-export function CSScript(styles){
+function CSScript(styles){
     if(typeof styles === 'object' && Array.isArray(styles)){
         return tag(styles);
     } else if(typeof styles === 'object'){
@@ -23,6 +24,10 @@ export function CSScript(styles){
         return tag([styles]);
     }
 }
+
+CSScript.colors = colors;
+
+export {CSScript};
 
 /**
  * @description verify if create element or return the classname

@@ -11,7 +11,7 @@ export function convertObjectToString(object){
     for (const key in object) {
         if (object.hasOwnProperty(key) && noValidate(KEYS_NO_VALIDATE, key)) {
             const value = object[key];
-            string += `${key}: ${value}`;
+            string += `${key}: ${value};`;
         }
     }
 
