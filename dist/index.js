@@ -106,7 +106,31 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_tag__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/tag */ \"./src/modules/tag/index.js\");\n\r\n\r\nwindow.tag = _modules_tag__WEBPACK_IMPORTED_MODULE_0__[\"tag\"]\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_tag__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/tag */ \"./src/modules/tag/index.js\");\n/* harmony import */ var _modules_CSScript__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/CSScript */ \"./src/modules/CSScript/index.js\");\n\r\n\r\n\r\nwindow.tag = _modules_tag__WEBPACK_IMPORTED_MODULE_0__[\"tag\"];\r\nwindow.CSScript = _modules_CSScript__WEBPACK_IMPORTED_MODULE_1__[\"CSScript\"];\n\n//# sourceURL=webpack:///./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/modules/CSScript/convert-object-to-string.js":
+/*!**********************************************************!*\
+  !*** ./src/modules/CSScript/convert-object-to-string.js ***!
+  \**********************************************************/
+/*! exports provided: convertObjectToString */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"convertObjectToString\", function() { return convertObjectToString; });\n/**\r\n * @description conver the object to string\r\n * @param {Object} object\r\n * @return string\r\n */\r\nfunction convertObjectToString(object){\r\n    let string = '';\r\n\r\n    for (const key in object) {\r\n        if (object.hasOwnProperty(key)) {\r\n            const value = object[key];\r\n            string += `${key}: ${value}`;\r\n        }\r\n    }\r\n\r\n    return string;\r\n}\n\n//# sourceURL=webpack:///./src/modules/CSScript/convert-object-to-string.js?");
+
+/***/ }),
+
+/***/ "./src/modules/CSScript/index.js":
+/*!***************************************!*\
+  !*** ./src/modules/CSScript/index.js ***!
+  \***************************************/
+/*! exports provided: CSScript */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"CSScript\", function() { return CSScript; });\n/* harmony import */ var _tag__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../tag */ \"./src/modules/tag/index.js\");\n/* harmony import */ var _modules_CSScript_convert_object_to_string__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../modules/CSScript/convert-object-to-string */ \"./src/modules/CSScript/convert-object-to-string.js\");\n\r\n\r\n\r\n/**\r\n * @description Generate CSS, add style in DOM and create Element\r\n * @param {string|Object} styles\r\n * @return string\r\n */\r\nfunction CSScript(styles){\r\n    if(typeof styles === 'object' && Array.isArray(styles)){\r\n        return Object(_tag__WEBPACK_IMPORTED_MODULE_0__[\"tag\"])(styles);\r\n    } else if(typeof styles === 'object'){\r\n        const style = Object(_modules_CSScript_convert_object_to_string__WEBPACK_IMPORTED_MODULE_1__[\"convertObjectToString\"])(styles);\r\n        console.log('aqui: ', style);\r\n        return Object(_tag__WEBPACK_IMPORTED_MODULE_0__[\"tag\"])([style]);\r\n\r\n    } else if(typeof styles === 'string'){ \r\n        return Object(_tag__WEBPACK_IMPORTED_MODULE_0__[\"tag\"])([styles]);\r\n    }\r\n}\n\n//# sourceURL=webpack:///./src/modules/CSScript/index.js?");
 
 /***/ }),
 
