@@ -10,7 +10,7 @@ test('Execute the function whit tag functions', () => {
 
 test('Execute the function whit tag functions and contain colors in parameters', () => {
     const style = createStyleString`
-        ${({colors}) => `background-color: ${colors.red}`}
+        ${({colors}) => `background-color: ${colors.RED}`}
     `;
 
     console.log('Aqui -> ', style);

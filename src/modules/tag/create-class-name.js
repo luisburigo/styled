@@ -25,7 +25,7 @@ export const hasClassInCache = (className) => cache.includes(className);
 /**
  * @description create random class name
  * @param {number} length
- * @return {string}
+ * @return {{name: string, className: string}}
  */
 export function createClassName(length) {
     let name = randomName(length);
@@ -34,10 +34,12 @@ export function createClassName(length) {
         name = randomName(length);
     } while (hasClassInCache(name));
 
-    name = className(name);
     addClassNameInCache(name);
 
-    return name; // Todo: retornar dois tipos, com e sem ponto.
+    return {
+        name,
+        className: className(name)
+    }; // Todo: retornar dois tipos, com e sem ponto.
 }
 
 /**

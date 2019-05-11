@@ -9,11 +9,12 @@ test(`create a random name with length ${tamanho}`, () => {
 })
 ;
 
-test(`create a random class name whit length ${tamanho}`, () => {
-    expect(className).toHaveLength(tamanho);
+test(`create a random class name whit length ${tamanho + 1}`, () => {
+    // O mais 1 é para somar com a inserção do 
+    expect(className.className).toHaveLength(tamanho + 1);
 });
 
 test('when generating the class, should be in the cache', () => {
-    const hasClass = hasClassInCache(className);
+    const hasClass = hasClassInCache(className.name);
     expect(hasClass).toEqual(true);
 });

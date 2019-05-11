@@ -13,9 +13,9 @@ const SIZE_CLASSNAME = 10;
 export function tag(...style) {
     const className = createClassName(SIZE_CLASSNAME);
     const styleString = createStyleString(style);
-    const styleConcact = concatStrings(className, styleString);
+    const styleConcact = concatStrings(className.className, styleString);
 
     insertInDom(styleConcact);
 
-    return className;
+    return className.name;
 }
