@@ -122,6 +122,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 
 /***/ }),
 
+/***/ "./src/modules/CSScript/create-element.js":
+/*!************************************************!*\
+  !*** ./src/modules/CSScript/create-element.js ***!
+  \************************************************/
+/*! exports provided: createElement */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"createElement\", function() { return createElement; });\n/**\r\n * @description create element and insert className\r\n * @param {string} element \r\n * @param {string} className \r\n * @return HTMLElement\r\n */\r\nfunction createElement(element, className){\r\n    const $el = document.createElement(element);\r\n    $el.classList.add(className);\r\n    return $el;\r\n}\n\n//# sourceURL=webpack:///./src/modules/CSScript/create-element.js?");
+
+/***/ }),
+
 /***/ "./src/modules/CSScript/index.js":
 /*!***************************************!*\
   !*** ./src/modules/CSScript/index.js ***!
@@ -130,7 +142,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"CSScript\", function() { return CSScript; });\n/* harmony import */ var _tag__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../tag */ \"./src/modules/tag/index.js\");\n/* harmony import */ var _modules_CSScript_convert_object_to_string__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../modules/CSScript/convert-object-to-string */ \"./src/modules/CSScript/convert-object-to-string.js\");\n\r\n\r\n/**\r\n * A type Style\r\n * @typedef {Object<string>} Style\r\n * @property {'div'|'span'|'h1'} element The element HTML create.\r\n */\r\n/**\r\n * @description Generate CSS, add style in DOM and create Element\r\n * @param {string|Object|Style} styles\r\n * @return string\r\n */\r\nfunction CSScript(styles){\r\n    if(typeof styles === 'object' && Array.isArray(styles)){\r\n        return Object(_tag__WEBPACK_IMPORTED_MODULE_0__[\"tag\"])(styles);\r\n    } else if(typeof styles === 'object'){\r\n        const style = Object(_modules_CSScript_convert_object_to_string__WEBPACK_IMPORTED_MODULE_1__[\"convertObjectToString\"])(styles);\r\n        return Object(_tag__WEBPACK_IMPORTED_MODULE_0__[\"tag\"])([style]);\r\n\r\n    } else if(typeof styles === 'string'){ \r\n        return Object(_tag__WEBPACK_IMPORTED_MODULE_0__[\"tag\"])([styles]);\r\n    }\r\n}\n\n//# sourceURL=webpack:///./src/modules/CSScript/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"CSScript\", function() { return CSScript; });\n/* harmony import */ var _tag__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../tag */ \"./src/modules/tag/index.js\");\n/* harmony import */ var _modules_CSScript_convert_object_to_string__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../modules/CSScript/convert-object-to-string */ \"./src/modules/CSScript/convert-object-to-string.js\");\n/* harmony import */ var _modules_CSScript_create_element__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../modules/CSScript/create-element */ \"./src/modules/CSScript/create-element.js\");\n\r\n\r\n\r\n\r\n/**\r\n * A type Style\r\n * @typedef {Object<string>} Style\r\n * @property {'div'|'span'|'h1'} element The element HTML create.\r\n */\r\n/**\r\n * @description Generate CSS, add style in DOM and create Element\r\n * @param {string|Object|Style} styles\r\n * @return string | HTMLElement\r\n */\r\nfunction CSScript(styles){\r\n    if(typeof styles === 'object' && Array.isArray(styles)){\r\n        return Object(_tag__WEBPACK_IMPORTED_MODULE_0__[\"tag\"])(styles);\r\n    } else if(typeof styles === 'object'){\r\n        const styleConverted = Object(_modules_CSScript_convert_object_to_string__WEBPACK_IMPORTED_MODULE_1__[\"convertObjectToString\"])(styles);\r\n        const className = Object(_tag__WEBPACK_IMPORTED_MODULE_0__[\"tag\"])([styleConverted]);\r\n        return verifyIfCreateElement(styles, className);\r\n    } else if(typeof styles === 'string'){ \r\n        return Object(_tag__WEBPACK_IMPORTED_MODULE_0__[\"tag\"])([styles]);\r\n    }\r\n}\r\n\r\n/**\r\n * @description verify if create element or return the classname\r\n * @param {Object} styles \r\n * @param {string} className \r\n * @return HTMLElement | string\r\n */\r\nfunction verifyIfCreateElement(styles, className){\r\n    if(styles.element){\r\n        return Object(_modules_CSScript_create_element__WEBPACK_IMPORTED_MODULE_2__[\"createElement\"])(styles.element, className);\r\n    }\r\n\r\n    return className;\r\n}\n\n//# sourceURL=webpack:///./src/modules/CSScript/index.js?");
 
 /***/ }),
 
