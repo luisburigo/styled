@@ -32,6 +32,9 @@ function CSScript(styles){
  */
 CSScript.colors = colors;
 
+/**
+ * Create function execute all tags HTML 
+ */
 tagsHTML.forEach(tag => {
     CSScript[tag] = executeCSScriptWithTagHTML(tag);
 })
@@ -40,12 +43,14 @@ export {CSScript};
 
 function executeCSScriptWithTagHTML(tag){
     return (style) => {
-        const classname = CSScript(style);
-        const element = createElement(tag, classname);
-        return element;
-
-        // style.element = tag;
-        // return CSScript(style);
+        if(typeof style === 'object' && Array.isArray(style)){
+            const classname = CSScript(style);
+            const element = createElement(tag, classname);
+            return element;
+        } else if(typeof style === 'object'){
+            style.element = tag;
+            return CSScript(style);
+        }
     }
 }
 
