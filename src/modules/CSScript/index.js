@@ -3,8 +3,10 @@ import {convertObjectToString} from "../../modules/CSScript/convert-object-to-st
 import {createElement} from "../../modules/CSScript/create-element"
 import {colors} from "../tag/Colors"
 
+const tagsHTML = ['div', 'section', 'span', 'h1', 'h2', 'h3', 'h4', 'h5', 'p', 'header', 'footer', 'main'];
+
 /**
- * A type Style
+ * Type Style
  * @typedef {Object<string>} Style
  * @property {'div'|'span'|'h1'} element The element HTML create.
  */
@@ -25,9 +27,27 @@ function CSScript(styles){
     }
 }
 
+/**
+ * Static property to get all colors
+ */
 CSScript.colors = colors;
 
+tagsHTML.forEach(tag => {
+    CSScript[tag] = executeCSScriptWithTagHTML(tag);
+})
+
 export {CSScript};
+
+function executeCSScriptWithTagHTML(tag){
+    return (style) => {
+        const classname = CSScript(style);
+        const element = createElement(tag, classname);
+        return element;
+
+        // style.element = tag;
+        // return CSScript(style);
+    }
+}
 
 /**
  * @description verify if create element or return the classname
