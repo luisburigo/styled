@@ -1,4 +1,6 @@
-const KEYS_NO_VALIDATE = ['element'];
+import {camelCaseToDashed} from "../../helpers/camel-to-dashed";
+
+const KEYS_NO_VALIDATE = ['element', 'selector'];
 
 /**
  * @description conver the object to string
@@ -11,7 +13,7 @@ export function convertObjectToString(object){
     for (const key in object) {
         if (object.hasOwnProperty(key) && noValidate(KEYS_NO_VALIDATE, key)) {
             const value = object[key];
-            string += `${key}: ${value};`;
+            string += `${camelCaseToDashed(key)}: ${value};`;
         }
     }
 
@@ -20,8 +22,8 @@ export function convertObjectToString(object){
 
 /**
  * @description Validate values
- * @param {Array} validates 
- * @param {string|number} value 
+ * @param {Array} validates
+ * @param {string|number} value
  * @return boolean
  */
 function noValidate(validates, value){
