@@ -61,7 +61,7 @@ function executeCSScriptWithTagHTML(tag) {
  */
 function verifyIfCreateElement(styles, className) {
     if (styles.selector && !styles.element) {
-        throw new Error('Ao informar a propiedade target a propiedade element deve ser obrigatoria');
+        throw new Error('Ao informar a propiedade target a selector element deve ser obrigatoria');
     } else if (styles.element && !styles.selector) {
         return createElement(styles.element, className);
     } else if (styles.element && styles.selector) {
@@ -80,5 +80,5 @@ function verifyIfCreateElement(styles, className) {
  */
 function insertNodeInTarget(node, selector) {
     const $target = document.querySelector(selector);
-    $target.appendChild(node);
+    $target.appendChild(node.getElement);
 }

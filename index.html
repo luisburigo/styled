@@ -84,5 +84,30 @@
         width: '100%',
         height: '200px',
         backgroundColor: CSScript.colors.BLUE
-    })
+    });
+
+    const span = CSScript.span`
+        color: red
+    `;
+
+    const span2 = CSScript.span`
+        color: red
+    `;
+
+    const span$El = span.getElement;
+    const span$El2 = span2.getElement;
+
+    div.appendElement(span$El, span$El2);
+
+    span.appendStyle`
+        font-size: 50px;
+    `
+
+    span.appendStyle`
+        color: white;
+    `
+
+    span$El.innerText = 'Hello';
+    span$El2.innerText = '12313213';
+
 </script>

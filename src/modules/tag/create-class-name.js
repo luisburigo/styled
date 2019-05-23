@@ -39,7 +39,7 @@ export function createClassName(length) {
     return {
         name,
         className: className(name)
-    }; // Todo: retornar dois tipos, com e sem ponto.
+    };
 }
 
 /**

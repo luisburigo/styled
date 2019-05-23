@@ -1,7 +1,7 @@
 import {createClassName} from "./create-class-name";
 import {createStyleString} from "./create-style-string";
 import {concatStrings} from "../../helpers/concat-strings";
-import {insertInDom} from "./insert-in-dom";
+import {insertInDom} from "./style-dom";
 
 const SIZE_CLASSNAME = 10;
 
